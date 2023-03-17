@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Image</th>
+    <th>Species</th>
+    <th>Availability</th>
+  </tr>
+
+  {% for pet in pets %}
+    <tr>
+      <td>{{ pet.name }}</td>
+      <td><img src="{{ pet.photo_url }}" width="100px" height="100px" /></td>
+      <td>{{ pet.species }}</td>
+      <td><strong>{{ 'Available' if pet.available else 'Not Available' }}</strong></td>
+    </tr>
+  {% endfor %}
+
+</table>
+
+{% endblock %}
