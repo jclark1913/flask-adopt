@@ -31,3 +31,12 @@ def homepage():
         "homepage.html",
         pets=Pet.query.all()
     )
+
+@app.route('/add', methods=["GET", "POST"])
+def add_pet():
+    """Pet add form, handles adding pets"""
+
+    return render_template(
+        "add_pet.html"
+    )
+
