@@ -1,5 +1,25 @@
-{% extends base.html %}
+{% extends 'base.html' %}
 
 {% block content %}
+
+<form id="add-pet-form" method="POST">
+  {{ form.hidden_tag() }} <!--add type=hidden form fields -->
+
+  {% for field in form
+         if field.widget.input_type != 'hidden' %}
+
+    <p>
+      {{ field.label }} <!-- HTML FOR LABEL -->
+      {{ field }} 		<!-- HTML FOR INPUT FIELD -->
+
+      {% for error in field.errors %}
+        {{ error }}
+      {% endfor %}
+    </p>
+
+  {% endfor %}
+
+  <button type="submit">Submit</button>
+</form>
 
 {% endblock %}
