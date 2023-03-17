@@ -42,7 +42,6 @@ class Pet(db.Model):
         default=""
     )
 
-    # Limit pool of choices
     age = db.Column(
         db.Text,
         nullable=False

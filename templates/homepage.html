@@ -16,7 +16,7 @@
 
   {% for pet in pets %}
     <tr>
-      <td>{{ pet.name }}</td>
+      <td><a href="/{{pet.id}}">{{ pet.name }}</a></td> <!-- Add jinja logic to avoid broken images -->
       <td><img src="{{ pet.photo_url }}" width="100px" height="100px" /></td>
       <td>{{ pet.species }}</td>
       <td><strong>{{ 'Available' if pet.available else 'Not Available' }}</strong></td>
